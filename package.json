@@ -1,0 +1,12 @@
+{
+    "name": "com.hamdanjaveed.not_so_annoying_whitespace_fixer",
+    "title": "Not So Annoying Whitespace Fixer",
+    "description": "Trims trailing whitespace for entire file except the line the cursor is currently on. Also ensures a newline at the end of the file.",
+    "homepage": "https://github.com/hamdanjaveed/Not-So-Annoying-Whitespace-Fixer",
+    "version": "1.0.0",
+    "author": "Hamdan Javeed",
+    "license": "MIT",
+    "engines": {
+        "brackets": ">=0.20.0"
+    }
+}
