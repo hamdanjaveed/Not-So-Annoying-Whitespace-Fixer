@@ -21,7 +21,7 @@ define(function (require, exports, module) {
     var EditorManager = brackets.getModule("editor/EditorManager");
     var DocumentManager = brackets.getModule("document/DocumentManager");
 
-    $(DocumentManager).on("documentSaved", function() {
+    $(CommandManager).on("beforeExecuteCommand ", function() {
         var editor = EditorManager.getFocusedEditor();
         var doc = DocumentManager.getCurrentDocument();
         var cursorPos = editor.getCursorPos();
