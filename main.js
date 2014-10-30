@@ -32,10 +32,11 @@ define(function (require, exports, module) {
             var linesToTrim = [];
             var rawLines = text.split("\n");
             var hasWhitespace = /\s+$/;
+            var isOnlyWhitespace = /^\s+$/
 
             // go through all the lines and add the indices of the lines with whitespace (ignoring the line the cursor is on)
             for (var i = 0; i < rawLines.length; i++) {
-                if (cursorPos.line !== i && hasWhitespace.test(rawLines[i])) linesToTrim.push(i);
+                if (cursorPos.line !== i && hasWhitespace.test(rawLines[i]) && !isOnlyWhitespace.test(rawLines[i])) linesToTrim.push(i);
             }
 
             doc.batchOperation(function() {
