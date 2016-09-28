@@ -44,13 +44,15 @@ define(function (require, exports, module) {
                 if (!/\n$/.test(text)) {
                     // append a new line to the end of the text
                     var lastLine = rawLines[rawLines.length - 1];
-                    doc.replaceRange(lastLine + "\n", {
-                        line: rawLines.length - 1,
-                        ch: 0
-                    }, {
-                        line: rawLines.length - 1,
-                        ch: lastLine.length
-                    });
+                    if (!/^$/.test(lastLine)) {
+                        doc.replaceRange(lastLine + "\n", {
+                            line: rawLines.length - 1,
+                            ch: 0
+                        }, {
+                            line: rawLines.length - 1,
+                            ch: lastLine.length
+                        });
+                    }
                 }
 
                 if (!linesToTrim.length) return;
